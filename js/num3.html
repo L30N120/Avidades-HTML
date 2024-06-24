@@ -1,0 +1,44 @@
+<!-- INICIO DO HTML --> 
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alteração de Cor de Fundo</title>
+</head>
+
+<body>
+    <div id="elemento-alvo" style="width:200px;height:200px;background-color:#ccc;margin-bottom:20px;"></div>
+    <button id="botao" onclick="alterarCorDeFundo()">Alterar Cor de Fundo</button>
+
+<!-- FIM DO CONTEUDO HTML --> 
+ <!-- INICIO DO JAVASCRIPT -->
+ <script>
+        // Função para gerar uma cor aleatória em formato hexadecimal​
+        function gerarCorAleatoria() {
+            // Gerando três valores de cor aleatórios entre 0 e 255​
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+
+            // Criando a string hexadecimal da cor​
+            const corHex = '#' + rgbParaHex(r) + rgbParaHex(g) + rgbParaHex(b);
+            return corHex;
+        }
+
+        // Função para converter um valor RGB para hexadecimal​
+        function rgbParaHex(rgb) {
+            let hex = rgb.toString(16);
+            // Se o valor hexadecimal tiver apenas um dígito, adicionamos um zero à esquerda​
+            return hex.length == 1 ? '0' + hex : hex;
+        }
+
+        // Função para alterar a cor de fundo do elemento alvo​
+        function alterarCorDeFundo() {
+            const novoCor = gerarCorAleatoria();
+            document.getElementById('elemento-alvo').style.backgroundColor = novoCor;
+        }
+    </script>
+ <!-- FIM DO JAVASCRIPT -->
+</body>
+</html>

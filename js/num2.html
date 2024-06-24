@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1 id="segundoJS">Leonardo 1.0 </h1>
+  <script>
+
+// Criando uma animação de fade in em um elemento​
+const elemento = document.getElementById('segundoJS');
+let opacidade = 0;
+const fadeIn = setInterval(function() {
+    if (opacidade < 1) {
+        opacidade += 0.1;
+        elemento.style.opacity = opacidade;
+    } else {
+        clearInterval(fadeIn);
+    }
+}, 100);
+
+  </script>
+</body>
+</html>
